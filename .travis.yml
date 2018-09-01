@@ -54,7 +54,7 @@ matrix:
     fast_finish: true
 
     include:
-          # Run grunt/npm install on highest version ('node' is an alias for the latest node.js version.)
+          # Run grunt/npm install on highest version ('lts/carbon' is an alias for the latest LTS Carbon version.)
         - php: 7.2
           env: DB=none     TASK=GRUNT   NVM_VERSION='lts/carbon'
 
@@ -114,7 +114,6 @@ install:
         if [ "$TASK" = 'GRUNT' ];
         then
             nvm install $NVM_VERSION ;
-            nvm use $NVM_VERSION ;
         fi
 
 before_script:
@@ -187,8 +186,8 @@ before_script:
     - >
       if [ "$TASK" = 'GRUNT' ];
       then
-        npm install --no-spin;
-        npm install --no-spin -g grunt ;
+        npm install ;
+        npm install -g grunt-cli ;
       fi
 
     ########################################################################
