@@ -244,6 +244,7 @@ class processor implements \core_analytics\classifier, \core_analytics\regressor
      */
     public function evaluate_classification($uniqueid, $maxdeviation, $niterations, \stored_file $dataset,
             $outputdir, $trainedmodeldir) {
+        global $CFG;
         $fh = $dataset->get_content_file_handle();
 
         if ($trainedmodeldir) {
