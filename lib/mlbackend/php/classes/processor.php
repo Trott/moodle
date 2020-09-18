@@ -249,6 +249,7 @@ class processor implements \core_analytics\classifier, \core_analytics\regressor
      * @return \stdClass
      */
     public function evaluate_classification($uniqueid, $maxdeviation, $niterations, \stored_file $dataset, $outputdir) {
+        global $CFG;
         $fh = $dataset->get_content_file_handle();
 
         // The first lines are var names and the second one values.
